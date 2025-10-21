@@ -9,7 +9,7 @@ logging:
 # Calibrate Configuration
 calibrate:
   patients_path: ./dataset/before_calibrate  # Patient data path
-  filebase: your reference file name  # Reference patient filename
+  filebase: 20230728-Patient3  # Reference patient filename
   save_path: ./output/after_calibrate  # Registration output path
   tps_reg: 1e-3  # TPS regularization parameter
   image_shape: [512, 512, 389]  # Image dimensions [width, height, depth]
