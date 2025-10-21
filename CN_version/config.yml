@@ -1,0 +1,53 @@
+# MLN项目配置文件
+
+# 日志配置
+logging:
+  level: INFO  # 日志级别: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_dir: ./output/logs  # 日志文件保存目录
+  log_file: mln.log  # 日志文件名
+
+# Calibrate配置
+calibrate:
+  patients_path: ./dataset/before_calibrate  # 患者数据路径
+  filebase: 20230728-WANGCUIRONG  # 基准患者文件名
+  save_path: ./output/after_calibrate  # 配准后数据保存路径
+  tps_reg: 1e-3  # TPS正则化参数
+  image_shape: [512, 512, 389]  # 图像尺寸 [width, height, depth]
+
+# Thermal_map配置
+thermal_map:
+  ct_dir: ./dataset/CT  # CT图像目录
+  nii_dir: ./output/after_calibrate  # 配准后的NII文件目录
+  img_path: ./output/Thermal_map/  # 热图输出路径
+  csv_path: ./output/CSVfile  # CSV文件保存路径
+  save_csv: false  # 是否保存CSV格式的数据
+  
+  # 窗口参数
+  window_width: 250  # 窗口宽度
+  window_center: 40  # 窗口中心
+  
+  # 可视化参数
+  alpha: 0.5  # 透明度 (0-1)
+  colormap: jet  # 颜色映射
+  figure_size: [8, 6]  # 图形尺寸
+  circle_radius: 1  # 热力点半径
+  
+  image_shape: [512, 512, 389]  # 图像尺寸 [width, height, depth]
+
+# Thermal_map_whiteBG配置
+thermal_map_white:
+  ct_dir: ./dataset/CT  # CT图像目录
+  nii_dir: ./output/after_calibrate  # 配准后的NII文件目录
+  img_path: ./output/whiteBG/Thermal_map/  # 白色背景热图输出路径
+  
+  # 窗口参数
+  window_width: 250  # 窗口宽度
+  window_center: 40  # 窗口中心
+  
+  # 可视化参数
+  alpha: 0.5  # 透明度 (0-1)
+  colormap: jet  # 颜色映射
+  figure_size: [8, 6]  # 图形尺寸
+  circle_radius: 1  # 热力点半径
+  
+  image_shape: [512, 512, 389]  # 图像尺寸 [width, height, depth]

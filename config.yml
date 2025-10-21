@@ -1,0 +1,53 @@
+# MLN Project Configuration File
+
+# Logging Configuration
+logging:
+  level: INFO  # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_dir: ./output/logs  # Log file directory
+  log_file: mln.log  # Log filename
+
+# Calibrate Configuration
+calibrate:
+  patients_path: ./dataset/before_calibrate  # Patient data path
+  filebase: 20230728-WANGCUIRONG  # Reference patient filename
+  save_path: ./output/after_calibrate  # Registration output path
+  tps_reg: 1e-3  # TPS regularization parameter
+  image_shape: [512, 512, 389]  # Image dimensions [width, height, depth]
+
+# Thermal_map Configuration
+thermal_map:
+  ct_dir: ./dataset/CT  # CT image directory
+  nii_dir: ./output/after_calibrate  # Registered NII file directory
+  img_path: ./output/Thermal_map/  # Heatmap output path
+  csv_path: ./output/CSVfile  # CSV file save path
+  save_csv: false  # Whether to save data in CSV format
+  
+  # Window parameters
+  window_width: 250  # Window width
+  window_center: 40  # Window center
+  
+  # Visualization parameters
+  alpha: 0.5  # Transparency (0-1)
+  colormap: jet  # Color mapping
+  figure_size: [8, 6]  # Figure size
+  circle_radius: 1  # Heat point radius
+  
+  image_shape: [512, 512, 389]  # Image dimensions [width, height, depth]
+
+# Thermal_map_whiteBG Configuration
+thermal_map_white:
+  ct_dir: ./dataset/CT  # CT image directory
+  nii_dir: ./output/after_calibrate  # Registered NII file directory
+  img_path: ./output/whiteBG/Thermal_map/  # White background heatmap output path
+  
+  # Window parameters
+  window_width: 250  # Window width
+  window_center: 40  # Window center
+  
+  # Visualization parameters
+  alpha: 0.5  # Transparency (0-1)
+  colormap: jet  # Color mapping
+  figure_size: [8, 6]  # Figure size
+  circle_radius: 1  # Heat point radius
+  
+  image_shape: [512, 512, 389]  # Image dimensions [width, height, depth]
